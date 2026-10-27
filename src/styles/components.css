@@ -1,0 +1,349 @@
+/* ==========================================================================
+   BUNYAN ARCHITECTURAL & INTERIOR STUDIO - COMPONENTS STYLES
+   Bento Grids, 3D Tilt Cards, Border Beams, Sliders, Modals & Print Styles
+   ========================================================================== */
+
+/* Glass Cards & Bento Base */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+/* 3D Tilt Cards with Dynamic Radial Spotlight */
+.tilt-card {
+  position: relative;
+  border-radius: 20px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.tilt-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(245, 158, 11, 0.12),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tilt-card:hover::before {
+  opacity: 1;
+}
+
+.tilt-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8), 0 0 25px -5px var(--accent-gold-glow);
+}
+
+/* Border Beam Effect */
+.border-beam-container {
+  position: relative;
+  border-radius: 24px;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.border-beam-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 300deg,
+    var(--accent-gold) 330deg,
+    var(--accent-cyan) 360deg
+  );
+  animation: rotateBeam 4s linear infinite;
+  z-index: 0;
+}
+
+.border-beam-inner {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  border-radius: 23px;
+  height: 100%;
+}
+
+@keyframes rotateBeam {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Primary Luxury Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+  color: #030712;
+  font-weight: 700;
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.6);
+  filter: brightness(1.08);
+}
+
+.btn-gold:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-glass {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  backdrop-filter: blur(12px);
+}
+
+.btn-glass:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-cyan {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-cyan-dark) 100%);
+  color: #030712;
+  font-weight: 700;
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.35);
+}
+
+.btn-cyan:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.5);
+}
+
+/* Badges & Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge-gold {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent-gold-light);
+  border: 1px solid var(--border-gold);
+}
+
+.badge-cyan {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-cyan);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Custom Range Slider */
+.custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  outline: none;
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--accent-gold);
+  border: 2px solid #ffffff;
+  transition: transform 0.15s ease;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.custom-range::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--accent-gold);
+  border: 2px solid #ffffff;
+}
+
+/* Modal Backdrop & Dialog */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-gold);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.9), 0 0 40px -10px var(--accent-gold-glow);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.modal-overlay.active .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 10;
+}
+
+[dir="ltr"] .modal-close-btn {
+  left: auto;
+  right: 20px;
+}
+
+.modal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Print Specific Rules for Official BOQ */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  #blueprint-canvas,
+  .ambient-glow,
+  header,
+  footer,
+  .no-print,
+  .modal-close-btn {
+    display: none !important;
+  }
+
+  .modal-overlay {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .modal-dialog {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    background: transparent !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .boq-print-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20mm !important;
+    page-break-after: avoid;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+  }
+}

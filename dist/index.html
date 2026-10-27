@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>بُـنْـيان: استوديو التصميم المعماري والداخلي وحاسبة تكاليف البناء الفاخر | Bunyan Architectural Studio</title>
+  <meta name="description" content="منصة واستوديو بُـنْـيان للتصميم المعماري والديكور الداخلي وحساب تكاليف الإنشاءات والتشطيب الفاخر في المملكة العربية السعودية وفق كود البناء السعودي SBC. إشراف وتصميم المعماري: أ. طارق ابوعشي." />
+  <meta name="author" content="أ. طارق ابوعشي (Tareq Aboushi)" />
+  <meta name="theme-color" content="#030712" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="بُـنْـيان: استوديو التصميم المعماري والداخلي وحاسبة تكاليف البناء الفاخر" />
+  <meta property="og:description" content="صياغة التحف المعمارية السلمانية والنجدية وحساب أدق تكاليف البناء وفق كود البناء السعودي SBC. إشراف المعماري أ. طارق ابوعشي." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon / SVG Brand Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030712'/><rect x='15' y='15' width='70' height='70' rx='10' stroke='%23f59e0b' stroke-width='6' fill='none'/><text x='50' y='65' font-family='Arial' font-size='48' font-weight='bold' fill='%23f59e0b' text-anchor='middle'>ب</text></svg>" />
+
+  <!-- Google Fonts: Cairo, Tajawal, Cinzel, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="./assets/index-Fm7E-2Hm.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/gsap-CzGW6FVa.js">
+  <link rel="modulepreload" crossorigin href="./assets/confetti-oQXWb4Lk.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-_4hGSBc1.css">
+</head>
+<body>
+
+  <!-- Interactive 3D Architectural Blueprint Drafting Canvas -->
+  <canvas id="blueprint-canvas"></canvas>
+
+  <!-- Ambient Radial Aurora Glow -->
+  <div class="ambient-glow"></div>
+
+  <div id="app">
+    
+    <!-- Sticky Glass Header Navigation -->
+    <header id="main-header" style="position: sticky; top: 0; z-index: 1000; background: var(--bg-glass-heavy); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border-bottom: 1px solid var(--border-subtle);"></header>
+
+    <!-- Main Content Flow -->
+    <main style="flex: 1;">
+      
+      <!-- HERO SECTION -->
+      <section id="hero-section" style="padding: 70px 0 60px 0; position: relative;">
+        <div class="container">
+          
+          <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            
+            <div class="reveal-on-scroll" style="margin-bottom: 20px;">
+              <span class="badge badge-gold" style="padding: 8px 18px; font-size: 0.88rem;">
+                <span>✨</span> <span data-i18n="heroBadge">هندسة معمارية ترتقي بمستقبل السكن الفاخر وفق رؤية 2030</span>
+              </span>
+            </div>
+
+            <h1 class="reveal-on-scroll" style="font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.15; margin-bottom: 24px;">
+              <span data-i18n="heroTitlePart1" class="shimmer-text">صياغة التحف المعمارية</span><br>
+              <span data-i18n="heroTitlePart2" style="color: var(--text-primary);">وحساب أدق تكاليف البناء في المملكة</span>
+            </h1>
+
+            <p class="reveal-on-scroll" data-i18n="heroDesc" style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 36px; max-width: 780px; margin-left: auto; margin-right: auto;">
+              منصة هندسية استشارية متكاملة تدمج فنون العمارة السلمانية والنجدية المعاصرة مع حاسبة تكاليف تنفيذية دقيقة متوافقة مع كود البناء السعودي (SBC)، واستوديو تفاعلي حي لمحاكاة الإضاءة والرخام والخامات الطبيعية.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="reveal-on-scroll" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px;">
+              <a href="#estimator-section" class="btn btn-gold" style="padding: 16px 36px; font-size: 1.05rem;">
+                <span>📐</span> <span data-i18n="heroBtnStart">حساب تكلفة فيلتك الآن</span>
+              </a>
+              <a href="#studio-section" class="btn btn-glass" style="padding: 16px 32px; font-size: 1.05rem;">
+                <span>💡</span> <span data-i18n="heroBtnExplore">استكشاف استوديو الخامات</span>
+              </a>
+            </div>
+
+            <!-- Bento Stats Counters Bar -->
+            <div class="reveal-on-scroll" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-gold); border-radius: 20px; padding: 24px; box-shadow: var(--glass-shadow);">
+              
+              <div style="border-left: 1px solid var(--border-subtle); [dir=ltr]& { border-left: none; border-right: 1px solid var(--border-subtle); }; padding: 0 12px;">
+                <div class="font-mono gold-text" style="font-size: 2.2rem; font-weight: 900;" data-counter="100">100%</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;" data-i18n="heroStat1Label">توافق كود البناء السعودي SBC</div>
+              </div>
+
+              <div style="border-left: 1px solid var(--border-subtle); [dir=ltr]& { border-left: none; border-right: 1px solid var(--border-subtle); }; padding: 0 12px;">
+                <div class="font-mono cyan-text" style="font-size: 2.2rem; font-weight: 900;" data-counter="7">7</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;" data-i18n="heroStat2Label">مراحل هندسية تفصيلية</div>
+              </div>
+
+              <div style="padding: 0 12px;">
+                <div class="font-mono" style="font-size: 2.2rem; font-weight: 900; color: var(--accent-emerald);" data-counter="98">98%</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;" data-i18n="heroStat3Label">دقة التقدير المالي للسوق</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 1. SMART CONSTRUCTION COST ESTIMATOR SECTION -->
+      <section id="estimator-section" style="padding: 50px 0; position: relative;">
+        <div class="container">
+          <div id="calculator-mount"></div>
+        </div>
+      </section>
+
+      <!-- 2. INTERACTIVE ROOM LIGHTING & MATERIAL MOODBOARD STUDIO -->
+      <section id="studio-section" style="padding: 50px 0; position: relative;">
+        <div class="container">
+          <div id="lighting-studio-mount"></div>
+        </div>
+      </section>
+
+      <!-- 3. ARCHITECTURAL MASTERPIECES & SAUDI STYLE ATLAS -->
+      <section id="atlas-section" style="padding: 50px 0; position: relative;">
+        <div class="container">
+          <div id="atlas-mount"></div>
+        </div>
+      </section>
+
+      <!-- 4. SAUDI BUILDING CODE (SBC) STANDARDS GRID -->
+      <section id="standards-section" style="padding: 50px 0; position: relative;">
+        <div class="container">
+          <div class="glass-panel" style="padding: 36px; border-radius: 24px;">
+            <div style="margin-bottom: 28px;">
+              <span class="badge badge-gold" style="margin-bottom: 8px;">
+                <span>📜</span> كود البناء السعودي الوطني (SBC)
+              </span>
+              <h2 style="font-size: 1.6rem; font-weight: 800;">معايير السلامة والجودة الإنشائية المعتمدة</h2>
+              <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                كافة تصاميم وحسابات استوديو بُـنْـيان ملتزمة بالكامل باشتراطات اللجنة الوطنية لكود البناء السعودي، بإشراف المعماري أ. طارق ابوعشي.
+              </p>
+            </div>
+
+            <div id="sbc-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
+              <!-- Dynamically populated from sbc-standards.ts -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SAVED ESTIMATES & MULTI-SCENARIO COMPARISON -->
+      <section id="comparison-section" style="padding: 50px 0 80px 0; position: relative;">
+        <div class="container">
+          <div id="comparison-mount"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- OFFICIAL ARCHITECTURAL STUDIO FOOTER -->
+    <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); padding: 60px 0 30px 0; position: relative; z-index: 10;">
+      <div class="container">
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
+          
+          <!-- Brand & About -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark)); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #030712; font-weight: 900;">
+                ب
+              </div>
+              <span class="font-display" style="font-size: 1.6rem; font-weight: 800; color: var(--accent-gold);">
+                بُـنْـيان
+              </span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 480px;" data-i18n="footerAbout">
+              بُـنْـيان هو استوديو للتصميم المعماري والداخلي الفاخر وحساب تكاليف الإنشاءات في المملكة العربية السعودية، تأسس لتقديم حلول معمارية وهندسية تجمع بين أصالة العمارة السلمانية والنجدية وأحدث المعايير العالمية لكود البناء السعودي.
+            </p>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">أقسام المنصة</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: var(--text-secondary);">
+              <li><a href="#estimator-section" style="transition: var(--transition-smooth);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-secondary)'">حاسبة التكاليف الفاخرة</a></li>
+              <li><a href="#studio-section" style="transition: var(--transition-smooth);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-secondary)'">استوديو الإضاءة والخامات</a></li>
+              <li><a href="#atlas-section" style="transition: var(--transition-smooth);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-secondary)'">أطلس الطرز المعمارية</a></li>
+              <li><a href="#standards-section" style="transition: var(--transition-smooth);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-secondary)'">معايير كود البناء SBC</a></li>
+              <li><a href="#comparison-section" style="transition: var(--transition-smooth);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-secondary)'">المشروعات المحفوظة</a></li>
+            </ul>
+          </div>
+
+          <!-- Lead Architect Certification Badge -->
+          <div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">الاعتماد الهندسي</h4>
+            <div style="background: var(--bg-card); padding: 18px; border-radius: 16px; border: 1px solid var(--border-gold);">
+              <div style="font-size: 0.76rem; color: var(--text-muted);">كبير المعماريين ومصمم المنصة:</div>
+              <div style="font-size: 1.05rem; font-weight: 800; color: var(--accent-gold); margin-top: 4px;">
+                أ. طارق ابوعشي
+              </div>
+              <div style="font-size: 0.76rem; color: var(--accent-cyan); margin-top: 2px;">
+                Tareq Aboushi | Certified Lead Architect
+              </div>
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.4;">
+                معتمد وفق الكود السعودي للمباني السكنية SBC 1101 | رخصة استشارية برقم مرجعي معتمد
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Copyright & Lead Credit Banner -->
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.82rem; color: var(--text-muted);">
+          <div data-i18n="footerRights">
+            جميع الحقوق محفوظة © 2026 | استوديو بُـنْـيان المعماري
+          </div>
+          <div style="color: var(--accent-gold-light); font-weight: 600;" data-i18n="footerLeadCredit">
+            تصميم وإشراف وتنفيذ المعماري: أ. طارق ابوعشي
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

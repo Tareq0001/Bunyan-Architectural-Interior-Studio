@@ -1,0 +1,252 @@
+/* ==========================================================================
+   BUNYAN ARCHITECTURAL & INTERIOR STUDIO - DESIGN SYSTEM
+   Lead Architect: أ. طارق ابوعشي (Tareq Aboushi)
+   Visual Style: Liquid Glass + Bento 3D + Modern Architectural Dark Luxury
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+:root {
+  /* Dark Architectural Luxury Theme (Default) */
+  --bg-primary: #030712;
+  --bg-secondary: #0b1120;
+  --bg-tertiary: #111827;
+  --bg-card: rgba(17, 24, 39, 0.72);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+  --bg-glass: rgba(15, 23, 42, 0.65);
+  --bg-glass-heavy: rgba(3, 7, 18, 0.88);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-gold: #f59e0b;
+
+  --accent-gold: #f59e0b;
+  --accent-gold-dark: #d97706;
+  --accent-gold-light: #fbbf24;
+  --accent-gold-glow: rgba(245, 158, 11, 0.25);
+  
+  --accent-cyan: #38bdf8;
+  --accent-cyan-dark: #0284c7;
+  --accent-cyan-glow: rgba(56, 189, 248, 0.22);
+
+  --accent-emerald: #10b981;
+  --accent-travertine: #e7e5e4;
+  --accent-travertine-dark: #a8a29e;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-gold: rgba(245, 158, 11, 0.32);
+  --border-cyan: rgba(56, 189, 248, 0.3);
+
+  --glass-blur: blur(18px);
+  --glass-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --glow-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.35);
+
+  --font-arabic: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cinzel', 'Playfair Display', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --header-height: 80px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light / Daylight Ivory Blueprint Theme */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --bg-glass: rgba(255, 255, 255, 0.75);
+  --bg-glass-heavy: rgba(248, 250, 252, 0.94);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-gold: #b45309;
+
+  --accent-gold: #d97706;
+  --accent-gold-dark: #b45309;
+  --accent-gold-light: #f59e0b;
+  --accent-gold-glow: rgba(217, 119, 6, 0.2);
+
+  --accent-cyan: #0284c7;
+  --accent-cyan-dark: #0369a1;
+  --accent-cyan-glow: rgba(2, 132, 199, 0.18);
+
+  --accent-emerald: #059669;
+  --accent-travertine: #78716c;
+  --accent-travertine-dark: #44403c;
+
+  --border-subtle: rgba(15, 23, 42, 0.09);
+  --border-medium: rgba(15, 23, 42, 0.16);
+  --border-gold: rgba(217, 119, 6, 0.36);
+  --border-cyan: rgba(2, 132, 199, 0.3);
+
+  --glass-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  --glow-shadow: 0 0 30px -5px rgba(217, 119, 6, 0.22);
+}
+
+/* Base Reset & Core Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 20px);
+}
+
+body {
+  font-family: var(--font-arabic);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  position: relative;
+}
+
+/* Background Canvas Layer */
+#blueprint-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* Ambient Radial Aurora */
+.ambient-glow {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, rgba(56, 189, 248, 0.08) 45%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="light"] .ambient-glow {
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.09) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 70%);
+}
+
+/* Main Layout Wrapper */
+#app {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Shimmer Text Effect */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-primary) 0%,
+    var(--accent-gold-light) 30%,
+    var(--accent-cyan) 50%,
+    var(--accent-gold) 70%,
+    var(--text-primary) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmerMove 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes shimmerMove {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* Gold Gradient Text */
+.gold-text {
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 50%, var(--accent-gold-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Cyan Gradient Text */
+.cyan-text {
+  background: linear-gradient(135deg, #7dd3fc 0%, var(--accent-cyan) 60%, var(--accent-cyan-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Links & Buttons Reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.3);
+  border-radius: 999px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
